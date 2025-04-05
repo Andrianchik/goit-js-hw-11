@@ -12,8 +12,12 @@ import iconError from './img/bi_x-octagon.png';
 
 const form = document.querySelector('.search-form');
 
+
+hideLoader();
+
 form.addEventListener('submit', async e => {
   e.preventDefault();
+
   const searchValue = form.elements.searchInput.value.trim();
 
   if (!searchValue) {
@@ -23,7 +27,7 @@ form.addEventListener('submit', async e => {
       message: 'Please enter what you want to find!',
       messageColor: '#FAFAFB',
       backgroundColor: '#EF4040',
-      position: 'topRight'
+      position: 'topRight',
     });
     return;
   }
@@ -37,14 +41,14 @@ form.addEventListener('submit', async e => {
   } catch (error) {
     iziToast.show({
       iconUrl: iconError,
-      message: `Something went wrong. Please try again later.`,
+      message: 'Something went wrong. Please try again later.',
       messageColor: '#FAFAFB',
       backgroundColor: '#EF4040',
-      position: 'topRight'
+      position: 'topRight',
     });
     console.error(error);
   } finally {
-    hideLoader(); 
+    hideLoader();
     form.reset();
   }
 });
