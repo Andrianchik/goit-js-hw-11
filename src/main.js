@@ -44,6 +44,7 @@ form.addEventListener('submit', async e => {
     });
     console.error(error);
   } finally {
+    hideLoader(); 
     form.reset();
   }
 });

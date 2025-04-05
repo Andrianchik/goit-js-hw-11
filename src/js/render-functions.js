@@ -33,7 +33,6 @@ function renderGallery(images) {
       backgroundColor: '#EF4040',
       position: 'topRight'
     });
-    hideLoader();
     return;
   }
 
@@ -65,7 +64,6 @@ function renderGallery(images) {
 
   gallery.innerHTML = itemTemplate;
   lightBox.refresh();
-  hideLoader();
 }
 
 export {
